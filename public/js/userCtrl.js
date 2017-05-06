@@ -1,8 +1,10 @@
+/*jshint esversion: 6*/
 
-
-angular.module('app').controller('UsersCtrl', ['$scope',
-  function($scope){
-  $scope.testScope = 'hello scope';
-  $scope.controllerAsTest = 'hello controllerAs';
-  localStorage.testLs = 'hello ls';
+angular.module('app').controller('UsersCtrl', ['$scope', 'userService',
+  function($scope, userService){
+    //$scope.users = userService;
+    userService.getUsers()
+    .then(users =>{
+      $scope.users = users;
+    });
  }]);

@@ -17,6 +17,22 @@ users.post('/',(req, res) =>{
   .catch( res.json.bind(res));
 });
 
+users.put('/:id', (req,res) =>{
+  User.update(
+    {name: req.body.name},
+    {where: {id: req.params.id}}
+    )
+  .then( result =>{
+    return User.findById( req.params.id );
+  })
+  .then( user =>{
+    res.json(user);
+  })
+  .catch(err =>{
+    res.json(err);
+  });
+});
+
 users.get('/:id', (req, res) =>{
   User.findById(req.params.id)
   .then(( user ) =>{
