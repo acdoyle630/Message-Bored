@@ -25,6 +25,15 @@ angular.module('app').controller('MessageCtrl', ['$scope', 'messageService',
 
 
 
+  $scope.findMessageByTopicId =  function(){
+    messageService.getMessageById($scope.id)
+    .then(messageByTopic =>{
+      $scope.messageByTopic = messageByTopic;
+    });
+  };
+
+
+
 
 
 

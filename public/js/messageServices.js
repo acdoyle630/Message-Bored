@@ -20,6 +20,12 @@ angular.module('app')
       .then(data=>{
         return data.data;
       });
+    },
+    getMessageById: function(id){
+      return $http.get(`/api/messages/by-topic/${id}`)
+      .then(data=>{
+        return data.data;
+      });
     }
   };
 }]);

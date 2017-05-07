@@ -20,3 +20,13 @@
  <h2>Message: {{postedMessage.body}}</h2><br>
  <h2>Author: {{postedMessage.author_id}}</h2><br>
  <h2>Topic: {{postedMessage.topic_id}}</h2>
+
+
+<input type="text"
+ ng-model="id" placeholder="Topic ID"><br>
+ <input type="submit"
+ ng-click='findMessageByTopicId()'>
+
+ <div ng-repeat="messageSearch in messageByTopic">
+ {{messageSearch.body}}
+ </div>
