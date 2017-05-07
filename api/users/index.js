@@ -12,6 +12,7 @@ users.get('/',(req, res ) =>{
 });
 
 users.post('/',(req, res) =>{
+  console.log(req.body);
   User.create( req.body )
   .then( res.json.bind(res))
   .catch( res.json.bind(res));

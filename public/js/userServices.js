@@ -16,6 +16,14 @@ angular.module('app')
         console.log(data);
         return data.data;
       });
+    },
+    postUser: function(name){
+      console.log(name);
+      return $http.post(`/api/users`, JSON.stringify({"name":name}))
+      .then(data=>{
+        console.log('data');
+        return data.data;
+      });
     }
   };
 }]);
