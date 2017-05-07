@@ -1,3 +1,22 @@
 <h1>MESSAGES</h1>
 
-{{testScope}}
+<div ng-repeat="message in messages">
+  <h2>Message: {{message.body}}</h2>
+  <h2>Author: {{message.author_id}}</h2>
+  <h2>Topic: {{message.topic_id}}<h2>
+</div>
+
+
+
+
+<input type="text"
+ ng-model="body" placeholder='message'><br>
+ <input type="text"
+ ng-model="author" placeholder='author'><br>
+ <input type="text"
+ ng-model="topic" placeholder='topic'><br>
+ <input type="submit"
+ ng-click='createMessage()'>
+ <h2>Message: {{postedMessage.body}}</h2><br>
+ <h2>Author: {{postedMessage.author_id}}</h2><br>
+ <h2>Topic: {{postedMessage.topic_id}}</h2>
