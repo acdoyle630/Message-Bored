@@ -9,6 +9,13 @@ angular.module('app')
         console.log(data);
         return data.data;
       });
+    },
+    getUserById: function(id){
+      return $http.get(`/api/users/${id}`)
+      .then(data =>{
+        console.log(data);
+        return data.data;
+      });
     }
   };
 }]);
