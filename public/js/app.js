@@ -12,8 +12,8 @@ angular.module('app', ['ngRoute'])
       })
       .when('/users/:id', {
         templateUrl: '/views/usersId.html',
-        controller: 'UsersCtrl',
-        controllerAs: 'users'
+        controller: 'ProfileCtrl',
+        controllerAs: 'profile'
       })
       .when('/users', {
         templateUrl: '/views/users.html',
