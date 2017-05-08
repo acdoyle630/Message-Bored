@@ -8,6 +8,12 @@ angular.module('app')
       .then(data =>{
         return data.data;
       });
+    },
+    getMessages: function(id){
+      return $http.get(`/api/messages/by-user/${id}`)
+      .then(data=>{
+        return data.data;
+      });
     }
   };
 }]);

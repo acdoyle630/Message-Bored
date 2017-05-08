@@ -11,6 +11,10 @@ angular.module('app').controller('ProfileCtrl', ['$scope', '$location', 'profile
     $scope.profile = profile;
   });
 
+  profileService.getMessages(pathNumber)
+  .then(messages =>{
+    $scope.messages = messages;
+  });
 
 
 

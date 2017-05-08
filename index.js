@@ -14,7 +14,7 @@ app.use('/api', require('./api'));
 
 const db = require('./models');
 
-db.sequelize.sync({});
+db.sequelize.sync({forcesync: true});
 
 app.listen(PORT, () =>{
   console.log(`Listening on ${PORT}`);

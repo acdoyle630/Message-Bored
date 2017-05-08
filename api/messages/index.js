@@ -55,4 +55,21 @@ messages.get('/by-topic/:topic_id', (req, res) =>{
   .then ( res.json.bind(res) );
 });
 
+messages.get('/by-user/:author_id', (req, res) =>{
+  Message.all({
+    include: [
+    {
+      model: User,
+      as: 'Author'
+    },
+    {
+      model: Topic,
+      as: 'Topic'
+    }
+    ],
+    where: { author_id: req.params.author_id}
+  })
+  .then( res.json.bind(res) );
+});
+
 module.exports = messages;

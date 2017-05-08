@@ -10,6 +10,11 @@ angular.module('app', ['ngRoute'])
       .when('/', {
         templateUrl: '/views/home.html',
       })
+      .when('/login',{
+        templateUrl: '/views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
       .when('/users/:id', {
         templateUrl: '/views/usersId.html',
         controller: 'ProfileCtrl',

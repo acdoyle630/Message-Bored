@@ -1,3 +1,14 @@
 <h1>Profile</h1>
 
-<h2>{{profile.name}}</h2>
+<h2> Name: {{profile.name}}</h2><br><br>
+
+
+
+
+
+<h3>Messages</h3><br>
+<div ng-repeat="message in messages">
+  <div><h2>Topic: </h2> <span>{{ message.Topic.name }}</span></div>
+  <h2>Body: </h2> <span> {{message.body}}</span>
+
+</div>
