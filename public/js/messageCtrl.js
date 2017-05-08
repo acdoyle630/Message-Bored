@@ -7,12 +7,12 @@ angular.module('app').controller('MessageCtrl', ['$scope', 'messageService',
 
 
 
-  $scope.allMessages = function(){
+ // $scope.allMessages = function(){
     messageService.getMessages()
     .then(messages =>{
       $scope.messages = messages;
     });
-  };
+ // };
 
 
 

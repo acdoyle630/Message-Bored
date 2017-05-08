@@ -1,14 +1,5 @@
 <h1>MESSAGES</h1>
 
-<div ng-repeat="message in messages">
-  <h2>Message: {{message.body}}</h2>
-  <h2>Author: {{message.author_id}}</h2>
-  <h2>Topic: {{message.topic_id}}<h2>
-</div>
-
-
-
-
 <input type="text"
  ng-model="body" placeholder='message'><br>
  <input type="text"
@@ -20,6 +11,17 @@
  <h2>Message: {{postedMessage.body}}</h2><br>
  <h2>Author: {{postedMessage.author_id}}</h2><br>
  <h2>Topic: {{postedMessage.topic_id}}</h2>
+
+
+<div ng-repeat="message in messages">
+  <h2>Message: </h2> <p>{{message.body}}</p>
+  <h2>Author: </h2>  <p>{{message.author_id}}</p>
+  <h2>Topic: </h2> <p>{{message.topic_id}}</p>
+</div>
+
+
+
+
 
 
 <input type="text"

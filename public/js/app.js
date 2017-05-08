@@ -10,6 +10,11 @@ angular.module('app', ['ngRoute'])
       .when('/', {
         templateUrl: '/views/home.html',
       })
+      .when('/users/:id', {
+        templateUrl: '/views/usersId.html',
+        controller: 'UsersCtrl',
+        controllerAs: 'users'
+      })
       .when('/users', {
         templateUrl: '/views/users.html',
         controller: 'UsersCtrl',
@@ -23,7 +28,7 @@ angular.module('app', ['ngRoute'])
       .when('/topics', {
         templateUrl: '/views/topics.html',
         controller: 'TopicCtrl',
-        controllerAs: 'topics'
+        controllerAs: 'topicController'
       });
       $locationProvider.html5Mode({
         enabled: true,
