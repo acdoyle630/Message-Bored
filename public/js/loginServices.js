@@ -9,7 +9,7 @@ angular.module('app')
 
     postUser: function(name, password){
         console.log(name);
-        return $http.post(`/api/users`, JSON.stringify(
+        return $http.post(`/api/users`,(
           {
             "name":name,
             "password": password
@@ -18,7 +18,18 @@ angular.module('app')
           console.log('data');
           return data.data;
         });
-      }
+      },
+    checkPassword: function(username, password){
+      console.log('checking');
+      return $http.post('/loginAuth', (
+      {
+        "username": username,
+        "password": password
+      }))
+      .then(data=>{
+        return data;
+      });
+    }
 
 
 

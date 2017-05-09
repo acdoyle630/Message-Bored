@@ -3,6 +3,8 @@
 const express = require('express');
 const users = express.Router();
 const { User } = require('../../models');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 users.get('/',(req, res ) =>{
   User.all()
@@ -13,9 +15,17 @@ users.get('/',(req, res ) =>{
 
 users.post('/',(req, res) =>{
   console.log(req.body);
-  User.create( req.body )
-  .then( res.json.bind(res))
-  .catch( res.json.bind(res));
+  bcrypt.genSalt(saltRounds, function(err,salt) {
+    bcrypt.hash(req.body.password, salt, function(err,hash){
+      User.create({
+        name: req.body.name,
+        password: hash
+      })
+      .then( res.json.bind(res))
+      .catch( res.json.bind(res));
+    });
+
+  });
 });
 
 users.put('/:id', (req,res) =>{
